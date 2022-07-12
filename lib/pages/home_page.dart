@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -13,7 +12,6 @@ import 'package:pinterest_clone_me_flutter/models/pinterest_model.dart';
 import 'package:pinterest_clone_me_flutter/models/utils.dart';
 import 'package:pinterest_clone_me_flutter/pages/detail_page.dart';
 import 'package:pinterest_clone_me_flutter/services/http_service.dart';
-
 
 
 class HomePage extends StatefulWidget {
