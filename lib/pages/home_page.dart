@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -327,10 +328,21 @@ class _HomePageState extends State<HomePage>
                                           showModalBottomSheet(
                                               isScrollControlled: true,
                                               context: context,
+
                                               builder: (context) {
                                                 return buildBottomSheet(
                                                     context, index);
                                               });
+
+                                          // for crashylist
+                                          FirebaseCrashlytics.instance
+                                              .log('Test ishlashyapti');
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(const SnackBar(
+                                            content: Text(
+                                                'Ishlayaptimi'),
+                                            duration: Duration(seconds: 5),
+                                          ));
                                         },
                                         child: const Icon(
                                           FontAwesomeIcons.ellipsisH,
